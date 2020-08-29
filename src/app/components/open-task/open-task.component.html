@@ -10,7 +10,7 @@
 <mat-form-field appearance="fill">
     <mat-label>Color</mat-label>
     <mat-select [(ngModel)]="selectedValue" name="color">
-      <mat-option *ngFor="let color of colors" [value]="color">
+      <mat-option *ngFor="let color of colorList" [(value)]="color">
         {{color}}
       </mat-option>
     </mat-select>
@@ -23,5 +23,5 @@
 <button mat-flat-raised color="secondary">Cancel</button>
 <!-- if task does not have a creationDate -->
 <ngif>
-  <button mat-flat-raised color="waring">Delete</button>
+  <button mat-flat-raised color="warning">Delete</button>
 </ngif>

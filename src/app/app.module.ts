@@ -7,6 +7,10 @@ import { BoardsComponent } from './components/boards/boards.component';
 import { OpenTaskComponent } from './components/open-task/open-task.component';
 import { ColorDropdownComponent } from './shared/color-dropdown/color-dropdown.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { FormsModule } from '@angular/forms'
+import { MatSelectModule, MatFormFieldModule, MatOptionModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,14 @@ import { ArchiveComponent } from './components/archive/archive.component';
     ArchiveComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    NoopAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatOptionModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
