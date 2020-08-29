@@ -4,4 +4,5 @@ export interface Board {
     color: string;
     userTypes:string[];
     assignees:string[];
-  }
+    columns:string[];//={"Todo","Inprogress","Done"}
+}

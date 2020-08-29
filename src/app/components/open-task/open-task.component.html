@@ -18,3 +18,10 @@
 
 <textarea name="Title" id="" cols="30" rows="10"></textarea> <!--textbox for title-->
 <textarea name="User Story" id="" cols="30" rows="10"></textarea> <!--textbox for story-->
+
+<button mat-flat-raised color="primary">Save</button>
+<button mat-flat-raised color="secondary">Cancel</button>
+<!-- if task does not have a creationDate -->
+<ngif>
+  <button mat-flat-raised color="waring">Delete</button>
+</ngif>
