@@ -1,0 +1,20 @@
+<mat-form-field appearance="fill">
+    <mat-label>User Type</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="user">
+      <mat-option *ngFor="let user of userTypes" [value]="userType">
+        {{user}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <mat-select [(ngModel)]="selectedValue" name="color">
+      <mat-option *ngFor="let color of colors" [value]="color">
+        {{color}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<textarea name="Title" id="" cols="30" rows="10"></textarea> <!--textbox for title-->
+<textarea name="User Story" id="" cols="30" rows="10"></textarea> <!--textbox for story-->
