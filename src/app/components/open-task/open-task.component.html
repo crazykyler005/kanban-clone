@@ -1,18 +1,54 @@
-<mat-form-field appearance="fill">
+<form class="example-form">
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <mat-select [(ngModel)]="selectedColor" name="Color">
+      <mat-option *ngFor="let color of colors" [value]=color>
+        {{color}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>User Type</mat-label>
+      <mat-select [(ngModel)]="selectedUser" name="User">
+        <mat-option *ngFor="let user of userTypes" [value]="user">
+          {{user}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Assigned To Task</mat-label>
+    <mat-select [(ngModel)]="assignedUser" name="Assignee">
+      <mat-option *ngFor="let assignee of assignees" [value]="assignee">
+        {{assignee}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>User Type</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="user">
-      <mat-option *ngFor="let user of userTypes" [value]="userType">
-        {{user}}
+    <mat-select [(ngModel)]="selectedDifficulty" name="Difficulty">
+      <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">
+        {{difficulty}}
       </mat-option>
     </mat-select>
 </mat-form-field>
 
-<textarea name="Title" id="" cols="30" rows="10"></textarea> <!--textbox for title-->
-<textarea name="User Story" id="" cols="30" rows="10"></textarea> <!--textbox for story-->
+  <mat-form-field class="example-full-width">
+    <mat-label>Task Description</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
 
-<button mat-flat-raised color="primary">Save</button>
-<button mat-flat-raised color="secondary">Cancel</button>
-<!-- if task does not have a creationDate -->
-<!--<ngif>
-  <button mat-flat-raised color="warning">Delete</button>
-</ngif>-->
+  <mat-form-field class="example-full-width">
+    <mat-label>User Story</mat-label>
+    <textarea matInput ></textarea>
+  </mat-form-field>
+  <p></p>
+  <button type="button" (click)="save()" mat-raised-button submit color="primary">Save</button>
+  <button type="button" (click)="cancel()" mat-raised-button color="secondary">Cancel</button>
+
+  <div *ngIf="!newTask">
+    <button type="button" (click)="delete()" mat-raised-button color="warn">Delete</button>
+  </div>
+</form>

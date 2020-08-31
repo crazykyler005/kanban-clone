@@ -1,8 +1,11 @@
 <mat-form-field appearance="fill">
     <mat-label>Color</mat-label>
-    <mat-select [(ngModel)]="selectedValue" name="color">
-      <mat-option *ngFor="let color of colors" [value]="color">
+    <mat-select [(ngModel)]="selectedColor">
+      <mat-option *ngFor="let color of colors" [value]=color>
         {{color}}
       </mat-option>
     </mat-select>
 </mat-form-field>
+
+<p>You selected: {{selectedColor}}</p>
+<div id="colorBox" [style.background-color]="selectedColor"></div>

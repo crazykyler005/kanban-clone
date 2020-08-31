@@ -5,7 +5,7 @@ export interface Task {
   description: string;
   difficulty: number;
   imgRef?: string;
-  creationData: Date;
+  creationDate: Date;
   color: string;
   //deleted: boolean;
 }
